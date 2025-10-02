@@ -9,6 +9,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
       origin: [
+      'https://uprelysi.vercel.app',
+      'https://www.relysi.com',
       'http://localhost:3000',
       'https://2f0916d7f2d3.ngrok-free.app'
     ],
@@ -26,4 +28,5 @@ server.listen(PORT, () => {
 process.on('unhandledRejection', (err) => {
   console.error('Unhandled Rejection:', err);
   server.close(() => process.exit(1));
+
 });
