@@ -41,6 +41,10 @@ app.use('/api/parent', require('./routes/parentRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/analytics', require('./routes/analyticsRoutes'));
 
+app.use('/api/legal', require('./routes/legalRoutes'));
+// app.use('/api/advertisements', require('./routes/advertisementRoutes'));  
+
+
 
 // Add API documentation route
 app.get('/api', (req, res) => {
@@ -59,7 +63,9 @@ app.get('/api', (req, res) => {
       meetings: '/api/meetings',
       parent: '/api/parent',
       admin: '/api/admin',
-      analytics: '/api/analytics'
+      analytics: '/api/analytics',
+      legal: '/api/legal',                   
+      // advertisements: '/api/advertisements'  
     }
   });
 });
@@ -69,5 +75,6 @@ app.get('/health', (req, res) => res.status(200).json({ status: 'OK' }));
 
 // Error handling
 app.use(errorHandler);
+
 
 module.exports = app;
